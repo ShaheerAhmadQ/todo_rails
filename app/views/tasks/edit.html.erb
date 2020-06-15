@@ -1,0 +1,25 @@
+<div style="width: 40%; margin-left:30%; margin-right:30%; border: 2px solid #ddd; padding: 50px; display: inline-block">
+    <% if !@task.nil? %>
+        <% if @task.errors.any? %>
+            <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        <% end %>
+    <% end %>
+
+
+    <%= form_for :task, url: tasks_path do |f| %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %> <br><br>
+
+        <%= f.label :body %>
+        <%= f.text_field :body %> <br><br>
+
+        <%= f.label :status, "Completed" %>
+        <%= f.check_box  :status %> <br><br>
+
+        <%= f.submit "Submit", disable_with: 'Updating...' %>
+
+    <% end %>
+</div>

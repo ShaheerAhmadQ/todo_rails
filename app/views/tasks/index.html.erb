@@ -1,0 +1,39 @@
+<h1 style="text-align: center; margin-bottom: 5%"> Listing all Tasks </h1>
+
+<table>
+    <tr>
+        <th>
+            <h2>Id</h2>
+        </th>
+        <th>
+            <h2>Title</h2>
+        </th>
+        <th>
+            <h2>Body</h2>
+        </th>
+        <th>
+            <h2>Completed</h2>
+        </th>
+        <th>
+            <h2>View</h2>
+        </th>
+        <th>
+            <h2>Edit</h2>
+        </th>
+        <th>
+            <h2>Delete</h2>
+        </th>
+    </tr>
+
+    <% @tasks.each do |task| %>
+    <tr>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= task.body %></td>
+        <td><%= task.status %></td>
+        <td><%= link_to "Show", task %></td>
+        <td><%= link_to "Edit", edit_task_path(task) %></td>
+        <td><%= link_to "Remove", task, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+    <% end %>
+</table>
