@@ -9,31 +9,31 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 70%;
-      margin-left:15%;
-      margin-right:15%;
-      border: 3px solid #ddd;
-    }
-
-    th,
-    td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    tr:hover {
-      background-color: #f5f5f5;
-    }
-  </style>
-
 </head>
 
 <body>
-  <%= yield %>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Todo Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+      aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/tasks">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tasks/new">New</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-xl pt-5">
+    <%= yield %>
+  </div>
 </body>
 
 </html>

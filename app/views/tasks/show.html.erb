@@ -1,23 +1,15 @@
 <h1 style="text-align: center; margin-bottom: 5%"> Displaying Task </h1>
 
-<table>
-    <tr>
-        <th>
-            <h2>Id</h2>
-        </th>
-        <th>
-            <h2>Title</h2>
-        </th>
-        <th>
-            <h2>Body</h2>
-        </th>
-        <th>
-            <h2>Completed</h2>
-        </th>
-        <th>
-            <h2>Delete</h2>
-        </th>
-    </tr>
+<table class="table-responsive table table-striped table-dark table-hover table-bordered">
+    <thead class="thead-light ">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Completed</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
 
     <tr>
         <td><%= @task.id %></td>
