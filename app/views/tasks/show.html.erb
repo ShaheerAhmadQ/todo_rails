@@ -15,9 +15,6 @@
             <h2>Completed</h2>
         </th>
         <th>
-            <h2>Edit</h2>
-        </th>
-        <th>
             <h2>Delete</h2>
         </th>
     </tr>
@@ -27,7 +24,7 @@
         <td><%= @task.title %></td>
         <td><%= @task.body %></td>
         <td><%= @task.status %></td>
-        <td><%= link_to "Edit", @task, method: :edit %></td>
+        <!-- <td><%= link_to "Edit", @task, method: :edit %></td> -->
         <td><%= link_to "Remove", @task, method: :delete, data: { confirm: "Are you sure?" } %></td>
     </tr>
 </table>

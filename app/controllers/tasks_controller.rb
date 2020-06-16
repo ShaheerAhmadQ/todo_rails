@@ -11,9 +11,9 @@ class TasksController < ApplicationController
     end
 
     def edit
+        @task = Task.where(is_deleted: false).find(params[:id])
         render plain: @task.inspect
-        #@task = Task.where(is_deleted: false).find(params[:id])
-        #if @task.update(title: params[:title], body:params[:title], status: params[:status])
+        #if @task.update(title: params[:task][:title], body:params[:task][:body], status: params[:task][:status])
         #    p "responding with Updated Task : #{@task.inspect}"
         #    redirect_to @task
         #else
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     end
 
     def create
-        @task = Task.new(title: params[:title], body:params[:title])
+        @task = Task.create(title: params[:task][:title], body:params[:task][:body])
         @task.save
         if @task.persisted?
             p "responding with persisted Task : #{@task.inspect}"
