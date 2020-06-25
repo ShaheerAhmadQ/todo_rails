@@ -1,6 +1,6 @@
 <h1 style="text-align: center; margin-bottom: 5%"> Create New Task </h1>
 
-<div style="width: 40%; margin-left:30%; margin-right:30%; border: 2px solid #ddd; padding: 50px; display: inline-block">
+<div style="width: 40%; margin-left:30%; margin-right:30%; border: 5px solid black; padding: 50px; display: inline-block">
     <% if !@task.nil? %>
         <% if @task.errors.any? %>
             <% @task.errors.full_messages.each do |message| %>
@@ -16,7 +16,7 @@
         <%= f.text_field(:title, {:class => 'form-control'}) %> <br><br>
 
         <%= f.label :body %>
-        <%= f.text_field(:body, {:class => 'from-control'}) %> <br><br>
+        <%= f.text_area(:body, {:class => 'form-control'}) %> <br><br>
 
         <%= f.submit "Submit", disable_with: 'Creating ...', :class => 'btn btn-primary' %>
 
