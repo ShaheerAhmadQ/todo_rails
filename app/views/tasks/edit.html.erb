@@ -8,18 +8,18 @@
     <% end %>
 
 
-    <%= form_for :task, url: tasks_path do |f| %>
+    <%= form_for @task do |f| %>
 
         <%= f.label :title %>
-        <%= f.text_field :title %> <br><br>
+        <%= f.text_field :title, {:class => 'form-control'} %> <br><br>
 
         <%= f.label :body %>
-        <%= f.text_field :body %> <br><br>
+        <%= f.text_field :body, {:class => 'form-control'} %> <br><br>
 
         <%= f.label :status, "Completed" %>
         <%= f.check_box  :status %> <br><br>
 
-        <%= f.submit "Submit", disable_with: 'Updating...' %>
+        <%= f.submit "Update", disable_with: 'Updating...' %>
 
     <% end %>
 </div>

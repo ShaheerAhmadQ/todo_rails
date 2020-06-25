@@ -7,6 +7,7 @@
             <th>Title</th>
             <th>Body</th>
             <th>Completed</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -16,7 +17,7 @@
         <td><%= @task.title %></td>
         <td><%= @task.body %></td>
         <td><%= @task.status %></td>
-        <!-- <td><%= link_to "Edit", @task, method: :edit %></td> -->
+        <td><%= link_to "Edit", edit_task_path(@task) %></td>
         <td><%= link_to "Remove", @task, method: :delete, data: { confirm: "Are you sure?" } %></td>
     </tr>
 </table>
